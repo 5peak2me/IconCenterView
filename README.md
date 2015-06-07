@@ -14,4 +14,4 @@ it looks like the ios style...so I decided to make a project collection and make
 
 ## Also U can get Demo from here
 
-[Download Demo](https://github.com/5peak2me/IconCenterView/master/demo/demo.apk)
+[Download Demo](https://raw.githubusercontent.com/5peak2me/IconCenterView/master/demo/demo.apk)
