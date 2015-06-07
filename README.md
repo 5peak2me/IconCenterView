@@ -5,8 +5,8 @@ This view is a custom view which extend EditText, it make the icon and the text 
 
 it looks like the ios style...so I decided to make a project collection and make this..<br>
 
-![](https://github.com/5peak2me/IconCenterView/master/imgs/iOS.gif)
-![](https://github.com/5peak2me/IconCenterView/master/imgs/Android.gif)
+![](https://github.com/5peak2me/IconCenterView/blob/master/imgs/iOS.gif)
+![](https://github.com/5peak2me/IconCenterView/blob/master/imgs/Android.gif)
 
 ..as you see right now,wish you like it.
 
