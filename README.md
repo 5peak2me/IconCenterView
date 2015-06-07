@@ -5,6 +5,8 @@ This view is a custom view which extend EditText, it make the icon and the text 
 
 it looks like the ios style...so I decided to make a project collection and make this..<br>
 
+but there is also a problem, that is you can't use android:gravity="center".
+
 ![](https://github.com/5peak2me/IconCenterView/blob/master/imgs/iOS.gif)
 ![](https://github.com/5peak2me/IconCenterView/blob/master/imgs/Android.gif)
 
