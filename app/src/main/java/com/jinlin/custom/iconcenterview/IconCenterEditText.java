@@ -59,17 +59,43 @@ public class IconCenterEditText extends EditText implements View.OnFocusChangeLi
             super.onDraw(canvas);
         } else { // 如果不是默认样式，需要将图标绘制在中间
             Drawable[] drawables = getCompoundDrawables();
-            if (drawables != null) {
-                Drawable drawableLeft = drawables[0];
-                if (drawableLeft != null) {
-                    float textWidth = getPaint().measureText(getHint().toString());
-                    int drawablePadding = getCompoundDrawablePadding();
-                    int drawableWidth = drawableLeft.getIntrinsicWidth();
-                    float bodyWidth = textWidth + drawableWidth + drawablePadding;
-                    canvas.translate((getWidth() - bodyWidth - getPaddingLeft() - getPaddingRight()) / 2, 0);
-                }
-            }
+            Drawable drawableLeft = drawables[0];
+            Drawable drawableRight = drawables[2];
+            translate(drawableLeft, canvas);
+            translate(drawableRight, canvas);
+//            if (drawableLeft != null) {
+//                float textWidth = getPaint().measureText(getHint().toString());
+//                int drawablePadding = getCompoundDrawablePadding();
+//                int drawableWidth = drawableLeft.getIntrinsicWidth();
+//                float bodyWidth = textWidth + drawableWidth + drawablePadding;
+//
+//                canvas.translate((getWidth() - bodyWidth - getPaddingLeft() - getPaddingRight()) / 2, 0);
+//            }
+//            if (drawableRight != null) {
+//                float textWidth = getPaint().measureText(getHint().toString()); // 文字宽度
+//                int drawablePadding = getCompoundDrawablePadding(); // 图标间距
+//                int drawableWidth = drawableRight.getIntrinsicWidth(); // 图标宽度
+//                float bodyWidth = textWidth + drawableWidth + drawablePadding;
+//                setPadding(getPaddingLeft(), getPaddingTop(), (int)(getWidth() - bodyWidth - getPaddingLeft()), getPaddingBottom());
+//                canvas.translate((getWidth() - bodyWidth - getPaddingLeft()) / 2, 0);
+//            }
             super.onDraw(canvas);
+        }
+
+    }
+
+    public void translate(Drawable drawable, Canvas canvas) {
+        if (drawable != null) {
+            float textWidth = getPaint().measureText(getHint().toString());
+            int drawablePadding = getCompoundDrawablePadding();
+            int drawableWidth = drawable.getIntrinsicWidth();
+            float bodyWidth = textWidth + drawableWidth + drawablePadding;
+            if (drawable == getCompoundDrawables()[0]) {
+                canvas.translate((getWidth() - bodyWidth - getPaddingLeft() - getPaddingRight()) / 2, 0);
+            } else {
+                setPadding(getPaddingLeft(), getPaddingTop(), (int)(getWidth() - bodyWidth - getPaddingLeft()), getPaddingBottom());
+                canvas.translate((getWidth() - bodyWidth - getPaddingLeft()) / 2, 0);
+            }
         }
     }
 
