@@ -1,5 +1,6 @@
 package com.jinlin.custom.iconcenterview;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -21,7 +22,9 @@ public class MainActivity extends BaseActivity{
             @Override
             public void onSearchClick(View view) {
                 Toast.makeText(MainActivity.this, "i'm going to seach", Toast.LENGTH_SHORT).show();
+                Log.d("MainActivity", "done");
             }
         });
+
     }
 }

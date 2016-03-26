@@ -117,7 +117,9 @@ public class IconCenterEditText extends EditText implements View.OnFocusChangeLi
             if (imm.isActive()) {
                 imm.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
             }
-            listener.onSearchClick(v);
+            if (event.getAction() == KeyEvent.ACTION_UP) {
+                listener.onSearchClick(v);
+            }
         }
         return false;
     }
